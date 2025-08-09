@@ -8,6 +8,7 @@ import lombok.Data;
 
 @MappedSuperclass
 @Data
+//PersistenceEntity, contendo apenas o ID (Chave primária), que também é uma das colunas da tabela "usuários". Ele não deve ser nulo e é único.
 public class PersistenceEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

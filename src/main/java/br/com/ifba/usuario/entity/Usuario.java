@@ -17,11 +17,16 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = false)
+
 public class Usuario extends PersistenceEntity implements Serializable {
+    //Atributos (Colunas) da tabela "usuarios".
+    //O nome não deve ser nulo.
     @Column(name = "nome", nullable = false)
     private String nome;
+    //O e-mail deve ser único e não deve ser nulo.
     @Column(name = "email", nullable = false, unique = true)
     private String email;
+    //A senha não deve ser nula.
     @Column(name = "senha", nullable = false)
     private String senha;
 }
