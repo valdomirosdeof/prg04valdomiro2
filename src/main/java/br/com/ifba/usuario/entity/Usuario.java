@@ -23,6 +23,9 @@ public class Usuario extends PersistenceEntity implements Serializable {
     //O nome não deve ser nulo.
     @Column(name = "nome", nullable = false)
     private String nome;
+    //O login deve ser único e não deve ser nulo.
+    @Column(name = "login", nullable = false, unique = true)
+    private String login;
     //O e-mail deve ser único e não deve ser nulo.
     @Column(name = "email", nullable = false, unique = true)
     private String email;
