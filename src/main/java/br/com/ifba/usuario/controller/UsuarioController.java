@@ -8,6 +8,7 @@ import br.com.ifba.usuario.dto.UsuarioPutRequestDto;
 import br.com.ifba.usuario.entity.Usuario;
 import br.com.ifba.usuario.service.UsuarioService;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -35,7 +36,7 @@ public class UsuarioController {
 
     //Envia informações ao servidor. Nesse caso, cadastra um usuário no sistema.
     @PostMapping(path = "/save", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<?> save(@RequestBody UsuarioPostRequestDto usuarioPostRequestDto) {
+    public ResponseEntity<?> save(@RequestBody @Valid UsuarioPostRequestDto usuarioPostRequestDto) {
         return ResponseEntity.status(HttpStatus.CREATED).body(objectMapperUtil.map(usuarioService.save((objectMapperUtil.map(usuarioPostRequestDto, Usuario.class))), UsuarioGetResponseDto.class));
     }
 
@@ -49,7 +50,7 @@ public class UsuarioController {
 
     //Atualiza informações no servidor. Nesse caso, atualiza uma ou mais informações de um usuário cadastrado no sistema.
     @PutMapping(path = "/update", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<?> update(@RequestBody UsuarioPutRequestDto usuarioPutRequestDto) {
+    public ResponseEntity<?> update(@RequestBody @Valid UsuarioPutRequestDto usuarioPutRequestDto) {
         Usuario usuario = objectMapperUtil.map(usuarioPutRequestDto, Usuario.class);
         usuarioService.update(usuario);
         return ResponseEntity.status(HttpStatus.OK)
