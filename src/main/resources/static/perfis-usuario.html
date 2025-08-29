@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfis de Usuário</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="corpo-2">
+    <h1 class="titulo-2">PERFIS DE USUÁRIO</h1>
+    <input type="text" id="perfis-search" class="barra-pesquisa" placeholder="Pesquisar..." />
+    <button id="perfis-add" class="botao-adicionar">ADICIONAR</button>
+    <div class="tabela-wrap">
+        <table class="tabela">
+            <thead>
+                <tr>
+                    <th class="celula-cabecalho">ID</th>
+                    <th class="celula-cabecalho">NÍVEL DE ACESSO</th>
+                    <th class="celula-cabecalho">PERMISSÕES</th>
+                    <th class="celula-cabecalho">DESCRIÇÃO DO PERFIL</th>
+                    <th class="celula-cabecalho">AÇÕES</th>
+                </tr>
+            </thead>
+            <tbody id="perfis-tbody"></tbody>
+        </table>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

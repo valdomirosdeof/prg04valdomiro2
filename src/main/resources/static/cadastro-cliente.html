@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Cliente</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="corpo-1">
+    <div class="card-1">
+        <h1 class="titulo-1">CADASTRAR CLIENTE</h1>
+        <form id="cliente-form" class="formulario-criar">
+            <input type="hidden" id="cliente-id" />
+            <div class="campo-formulario">
+                <label for="nome">Nome</label>
+                <input type="text" id="cliente-nome" name="nome" required placeholder="Informe o nome">
+            </div>
+            <div class="campo-formulario">
+                <label for="telefone">Telefone</label>
+                <input type="text" id="cliente-telefone" name="telefone" required placeholder="Informe o telefone">
+            </div>
+            <div class="campo-formulario">
+                <label for="endereco">Endereço</label>
+                <input type="text" id="cliente-endereco" name="endereco" required placeholder="Informe o endereço">
+            </div>
+            <div class="campo-formulario">
+                <label for="cpf">CPF</label>
+                <input type="text" id="cliente-cpf" name="cpf" required placeholder="Informe o CPF">
+            </div>
+            <div class="campo-formulario">
+                <label for="historico">Histórico de compras</label>
+                <input type="text" id="cliente-historico" name="historicoDeCompras"
+                    placeholder="Informe as compras feitas">
+            </div>
+            <div class="campo-formulario">
+                <label for="limite">Limite de crédito</label>
+                <input type="number" id="cliente-limite" name="limiteDeCredito"
+                    placeholder="Informe o limite de crédito">
+            </div>
+
+            <div id="cliente-form-errors" class="form-errors" style="color: yellow;"></div>
+
+            <button type="submit" id="cliente-form-submit" class="botao-salvar">SALVAR</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="corpo-2">
+    <h1 class="titulo-2">CLIENTES</h1>
+    <input type="text" id="clientes-search" class="barra-pesquisa" placeholder="Pesquisar..." />
+    <button id="clientes-add" class="botao-adicionar">ADICIONAR</button>
+    <div class="tabela-wrap">
+        <table class="tabela">
+            <thead>
+                <tr>
+                    <th class="celula-cabecalho">ID</th>
+                    <th class="celula-cabecalho">NOME</th>
+                    <th class="celula-cabecalho">TELEFONE</th>
+                    <th class="celula-cabecalho">ENDEREÇO</th>
+                    <th class="celula-cabecalho">CPF</th>
+                    <th class="celula-cabecalho">HISTÓRICO DE COMPRAS</th>
+                    <th class="celula-cabecalho">LIMITE DE CRÉDITO</th>
+                    <th class="celula-cabecalho">AÇÕES</th>
+                </tr>
+            </thead>
+            <tbody id="clientes-tbody"></tbody>
+        </table>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

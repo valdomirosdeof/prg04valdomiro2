@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Usuário</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="corpo-1">
+    <div class="card-1">
+        <h1 class="titulo-1">CADASTRAR USUÁRIO</h1>
+        <form id="usuario-form" class="formulario-criar">
+            <input type="hidden" id="usuario-id" name="id" />
+            <div class="campo-formulario">
+                <label for="nome">Nome</label>
+                <input type="text" id="usuario-nome" name="nome" required placeholder="Informe o nome">
+            </div>
+            <div class="campo-formulario">
+                <label for="login">Login</label>
+                <input type="text" id="usuario-login" name="login" required placeholder="Informe o login">
+            </div>
+            <div class="campo-formulario">
+                <label for="email">E-mail</label>
+                <input type="email" id="usuario-email" name="email" required placeholder="Informe o e-mail">
+            </div>
+            <div class="campo-formulario">
+                <label for="senha">Senha</label>
+                <input type="password" id="usuario-senha" name="senha" required placeholder="Informe a senha">
+            </div>
+            <div class="campo-formulario">
+                <label for="pessoa">Pessoa vinculada</label>
+                <select id="usuario-pessoa-id" name="pessoaId">
+                    <option value="">-- Nenhuma --</option>
+                </select>
+            </div>
+            
+            <div class="campo-formulario">
+                <label for="perfis">Perfis</label>
+                <select id="usuario-perfis-ids" name="perfisDeUsuarioIds" multiple>
+                </select>
+            </div>
+
+            <div id="usuario-form-errors" class="form-errors" style="color: yellow;"></div>
+
+            <button type="submit" id="usuario-form-submit" class="botao-salvar">SALVAR</button>
+        </form>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

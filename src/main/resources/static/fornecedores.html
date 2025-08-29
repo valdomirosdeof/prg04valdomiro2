@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fornecedores</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="corpo-2">
+    <h1 class="titulo-2">FORNECEDORES</h1>
+    <input type="text" id="fornecedores-search" class="barra-pesquisa" placeholder="Pesquisar..." />
+    <button id="fornecedores-add" class="botao-adicionar">ADICIONAR</button>
+    <div class="tabela-wrap">
+        <table class="tabela">
+            <thead>
+                <tr>
+                    <th class="celula-cabecalho">ID</th>
+                    <th class="celula-cabecalho">NOME</th>
+                    <th class="celula-cabecalho">TELEFONE</th>
+                    <th class="celula-cabecalho">ENDEREÇO</th>
+                    <th class="celula-cabecalho">CNPJ</th>
+                    <th class="celula-cabecalho">LISTA DE PRODUTOS</th>
+                    <th class="celula-cabecalho">PRAZO DE ENTREGA</th>
+                    <th class="celula-cabecalho">AÇÕES</th>
+                </tr>
+            </thead>
+            <tbody id="fornecedores-tbody"></tbody>
+        </table>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

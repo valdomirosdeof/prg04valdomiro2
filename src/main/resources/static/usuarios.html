@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuários</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="corpo-2">
+    <h1 class="titulo-2">USUÁRIOS</h1>
+    <input type="text" id="usuarios-search" class="barra-pesquisa" placeholder="Pesquisar..." />
+    <button id="usuarios-add" class="botao-adicionar">ADICIONAR</button>
+    <div class="tabela-wrap">
+        <table class="tabela">
+            <thead>
+                <tr>
+                    <th class="celula-cabecalho">ID</th>
+                    <th class="celula-cabecalho">NOME</th>
+                    <th class="celula-cabecalho">LOGIN</th>
+                    <th class="celula-cabecalho">E-MAIL</th>
+                    <th class="celula-cabecalho">SENHA</th>
+                    <th class="celula-cabecalho">PERFIL DE USUÁRIO</th>
+                    <th class="celula-cabecalho">PESSOA</th>
+                    <th class="celula-cabecalho">AÇÕES</th>
+                </tr>
+            </thead>
+            <tbody id="usuarios-tbody"></tbody>
+        </table>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,249 @@
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+.corpo-1 {
+    background-color: silver;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.card-1 {
+    background-color: #ea4335;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    padding: 25px 50px;
+}
+
+.titulo-1 {
+    color: #fbbc04;
+    font-size: 32px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.botao {
+    background-color: #4285f4;
+    color: white;
+    width: 256px;
+    height: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.botao>a {
+    color: white;
+    text-decoration: none;
+    width: 256px;
+    height: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.botao:hover {
+    background-color: black;
+    font-weight: bold;
+}
+
+/*USUÁRIOS*/
+
+.corpo-2{
+    background-color: silver;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+}
+
+.titulo-2{
+    background-color: #ea4335;
+    color: #fbbc04;
+    font-size: 32px;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+}
+
+.barra-pesquisa{
+    width: 480px;
+    padding: 10px;
+    margin: auto;
+    display: block;
+    border: 1px solid silver;
+    font-size: 16px;
+}
+
+.botao-adicionar {
+    background-color: #4285f4;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.botao-adicionar:hover {
+    background-color: black;
+    font-weight: bold;
+}
+
+.tabela {
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin: 0px auto;
+    width: 100%;
+    table-layout: fixed;
+}
+
+.tabela td {
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    overflow: hidden;
+    padding: 5px 5px;
+    word-break: normal;
+}
+
+.tabela th {
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    overflow: hidden;
+    padding: 5px 5px;
+    word-break: normal;
+}
+
+.tabela .celula-cabecalho{
+    background-color: #000000;
+    border-color: #000000;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle
+}
+
+.tabela .celula-dados {
+    background-color: #ffffff;
+    border-color: #000000;
+    color: #000000;
+    font-size: 16px;
+    text-align: left;
+    vertical-align: middle
+}
+
+.tabela .celula-acoes {
+    background-color: #ffffff;
+    border-color: #000000;
+    color: #000000;
+    font-size: 16px;
+    text-align: center;
+    vertical-align: middle
+}
+
+.botao-editar {
+    background-color: #4285f4; /* verde */
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.botao-editar:hover {
+    background-color: black;
+    font-weight: bold;
+}
+
+.botao-excluir {
+    background-color: #ea4335; /* vermelho */
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.botao-excluir:hover {
+    background-color: black;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 767px) {
+    .tabela {
+        width: auto !important;
+    }
+
+    .tabela col {
+        width: auto !important;
+    }
+
+    .tabela-wrap {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        margin: auto 0px;
+    }
+}
+
+/*PERFIS DE USUÁRIO*/
+
+.formulario-criar{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+}
+
+.campo-formulario{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.campo-formulario>label{
+    color: white;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.campo-formulario>input{
+    background-color: white;
+    padding: 10px;
+    border: none;
+    width: 100%;
+}
+
+.botao-salvar{
+    background-color: #4285f4;
+    color: white;
+    padding: 10px;
+    width: 128px;
+    align-self: center;
+    border: none;
+    cursor: pointer;
+}
+
+.botao-salvar:hover{
+    background-color: black;
+    font-weight: bold;
+}

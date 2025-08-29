@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Fornecedor</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="corpo-1">
+    <div class="card-1">
+        <h1 class="titulo-1">CADASTRAR FORNECEDOR</h1>
+        <form id="fornecedor-form" class="formulario-criar">
+            <input type="hidden" id="fornecedor-id" />
+            <div class="campo-formulario">
+                <label for="nome">Nome</label>
+                <input type="text" id="fornecedor-nome" name="nome" required placeholder="Informe o nome">
+            </div>
+            <div class="campo-formulario">
+                <label for="telefone">Telefone</label>
+                <input type="text" id="fornecedor-telefone" name="telefone" required placeholder="Informe o telefone">
+            </div>
+            <div class="campo-formulario">
+                <label for="endereco">Endereço</label>
+                <input type="text" id="fornecedor-endereco" name="endereco" required placeholder="Informe o endereço">
+            </div>
+            <div class="campo-formulario">
+                <label for="cnpj">CNPJ</label>
+                <input type="text" id="fornecedor-cnpj" name="cnpj" required placeholder="Informe o CNPJ">
+            </div>
+            <div class="campo-formulario">
+                <label for="lista-produtos">Lista de produtos</label>
+                <input type="text" id="fornecedor-lista-produtos" name="listaDeProdutos" placeholder="Liste produtos">
+            </div>
+            <div class="campo-formulario">
+                <label for="prazo">Prazo de entrega</label>
+                <input type="number" id="fornecedor-prazo" name="prazoDeEntrega"
+                    placeholder="Informe o prazo de entrega">
+            </div>
+
+            <div id="fornecedor-form-errors" class="form-errors" style="color: yellow;"></div>
+
+            <button type="submit" id="fornecedor-form-submit" class="botao-salvar">SALVAR</button>
+        </form>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

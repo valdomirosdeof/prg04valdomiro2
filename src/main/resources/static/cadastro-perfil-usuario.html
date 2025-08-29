@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Perfil de Usuário</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="corpo-1">
+    <div class="card-1">
+        <h1 class="titulo-1">CADASTRAR PERFIL DE USUÁRIO</h1>
+        <form id="perfil-form" class="formulario-criar">
+            <input type="hidden" id="perfil-id" />
+            <div class="campo-formulario">
+                <label for="nivel-acesso">Nível de Acesso</label>
+                <input type="text" id="perfil-nivel" name="nivelDeAcesso" required
+                    placeholder="Informe o nível de acesso">
+            </div>
+            <div class="campo-formulario">
+                <label for="permissoes">Permissões</label>
+                <input type="text" id="perfil-permissoes" name="permissoes" required
+                    placeholder="Informe as permissões">
+            </div>
+            <div class="campo-formulario">
+                <label for="descricao">Descrição</label>
+                <input type="text" id="perfil-descricao" name="descricaoDoPerfil" placeholder="Descreva o perfil">
+            </div>
+            <div class="campo-formulario">
+                <label for="usuarioId">Usuário</label>
+                <select id="perfil-usuario-id" name="usuarioId" required>
+                    <option value="">-- Selecione --</option>
+                </select>
+            </div>
+
+            <div id="perfil-form-errors" class="form-errors" style="color: yellow;"></div>
+
+            <button type="submit" id="perfil-form-submit" class="botao-salvar">SALVAR</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
