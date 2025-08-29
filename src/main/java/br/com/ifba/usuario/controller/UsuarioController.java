@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.*;
 //UsuarioController e seus métodos de requisição mapeados. Tem conexão com a camada Service e contém as funcionalidades do sistema.
 @RestController
 @RequestMapping(path = "/usuarios")
+@CrossOrigin(origins = "*")
 @RequiredArgsConstructor
 public class UsuarioController {
     private final UsuarioService usuarioService;

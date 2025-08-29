@@ -1,6 +1,7 @@
 package br.com.ifba.usuario.service;
 
 import br.com.ifba.infrastructure.exception.BusinessException;
+import br.com.ifba.perfildeusuario.entity.PerfilDeUsuario;
 import br.com.ifba.usuario.entity.Usuario;
 import br.com.ifba.usuario.repository.UsuarioRepository;
 import lombok.RequiredArgsConstructor;
@@ -29,14 +30,18 @@ public class UsuarioService implements UsuarioIService {
     @Override
     @Transactional
     public Usuario save(Usuario usuario) {
-        // Verifica duplicidade de login.
+        //Verifica duplicidade de login.
         if (usuarioRepository.findByLogin(usuario.getLogin()).isPresent()) {
             throw new BusinessException("Login já está em uso por outro usuário: " + usuario.getLogin());
         }
 
-        // Verifica duplicidade de e-mail.
+        //Verifica duplicidade de e-mail.
         if (usuarioRepository.findByEmail(usuario.getEmail()).isPresent()) {
             throw new BusinessException("-Email já está em uso por outro usuário: " + usuario.getEmail());
+        }
+
+        if (usuario.getPerfisDeUsuario() != null) {
+            usuario.getPerfisDeUsuario().forEach(perfil -> perfil.setUsuario(usuario));
         }
 
         return usuarioRepository.save(usuario);
@@ -72,6 +77,25 @@ public class UsuarioService implements UsuarioIService {
                     throw new BusinessException("E-mail já está em uso por outro usuário: " + usuario.getEmail());
                 });
 
+        if (usuario.getPerfisDeUsuario() != null) {
+            usuario.getPerfisDeUsuario().forEach(perfil -> perfil.setUsuario(usuario));
+        }
+
+        return usuarioRepository.save(usuario);
+    }
+
+    @Transactional
+    public Usuario adicionarPerfil(Long usuarioId, PerfilDeUsuario perfil) {
+        Usuario usuario = findById(usuarioId);
+        perfil.setUsuario(usuario);
+        usuario.getPerfisDeUsuario().add(perfil);
+        return usuarioRepository.save(usuario);
+    }
+
+    @Transactional
+    public Usuario removerPerfil(Long usuarioId, Long perfilId) {
+        Usuario usuario = findById(usuarioId);
+        usuario.getPerfisDeUsuario().removeIf(perfil -> perfil.getId().equals(perfilId));
         return usuarioRepository.save(usuario);
     }
 }

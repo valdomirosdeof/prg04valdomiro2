@@ -1,6 +1,9 @@
 package br.com.ifba.usuario.dto;
 
+import br.com.ifba.perfildeusuario.dto.PerfilDeUsuarioPutRequestDto;
+import br.com.ifba.pessoa.dto.PessoaPutRequestDto;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -8,6 +11,9 @@ import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -44,4 +50,12 @@ public class UsuarioPutRequestDto {
     @NotBlank(message = "A senha não pode ser vazia!")
     @Size(min = 6, max = 18, message = "A senha deve ter entre 6 e 18 caracteres!")
     private String senha;
+
+    @JsonProperty(value = "perfisDeUsuario")
+    @Valid
+    private List<PerfilDeUsuarioPutRequestDto> perfisDeUsuario = new ArrayList<>();
+
+    @JsonProperty(value = "pessoa")
+    @Valid
+    private PessoaPutRequestDto pessoa;
 }

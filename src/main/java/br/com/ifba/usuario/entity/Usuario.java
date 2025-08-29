@@ -1,15 +1,17 @@
 package br.com.ifba.usuario.entity;
 
 import br.com.ifba.infrastructure.entity.PersistenceEntity;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import br.com.ifba.perfildeusuario.entity.PerfilDeUsuario;
+import br.com.ifba.pessoa.entity.Pessoa;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "usuarios")
@@ -17,7 +19,6 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = false)
-
 public class Usuario extends PersistenceEntity implements Serializable {
     //Atributos (Colunas) da tabela "usuarios".
     //O nome não deve ser nulo.
@@ -32,4 +33,13 @@ public class Usuario extends PersistenceEntity implements Serializable {
     //A senha não deve ser nula.
     @Column(name = "senha", nullable = false)
     private String senha;
+
+    //Relacionamento com PerfilDeUsuario
+    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<PerfilDeUsuario> perfisDeUsuario = new ArrayList<>();
+
+    //Relacionamento com Pessoa
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "pessoa_id", referencedColumnName = "id")
+    private Pessoa pessoa;
 }
